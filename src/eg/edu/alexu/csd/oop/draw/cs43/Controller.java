@@ -2,6 +2,7 @@ package eg.edu.alexu.csd.oop.draw.cs43;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -96,7 +97,7 @@ public class Controller {
 	
 
 	private void mousePressedAction(Point point) {
-		
+		canvas.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 		shape1.setColor(color);
 		shape1.setFillColor(Color.white);
 		map = shape1.getProperties();
