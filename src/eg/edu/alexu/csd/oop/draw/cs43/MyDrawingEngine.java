@@ -176,7 +176,7 @@ public class MyDrawingEngine implements DrawingEngine {
 		if (soc.getOperation().equals("add")) {
 			numberOfundos++;
 			System.out.println("undoadd");
-			list.remove(list.size() - 1);
+			list.remove(soc.getShape());
 			redo.add(new ShapeOperationClass(soc.getShape(), null, "add"));
 		} else if (soc.getOperation().equals("remove")) {
 			numberOfundos++;
@@ -186,7 +186,7 @@ public class MyDrawingEngine implements DrawingEngine {
 		} else if (soc.getOperation().equals("update")) {
 			System.out.println("undoupdate");
 			numberOfundos++;
-			list.remove(list.size() - 1);
+			list.remove(soc.getShape2());
 			list.add(soc.getShape());
 			redo.add(new ShapeOperationClass(soc.getShape(), soc.getShape2(), "update"));
 		}
@@ -204,11 +204,11 @@ public class MyDrawingEngine implements DrawingEngine {
 				System.out.println("REdoadd");
 				numberOfundos--;
 			} else if (soc.getOperation().equals("remove")) {
-				list.remove(list.size() - 1);
+				list.remove(soc.getShape());
 				System.out.println("redoRemove");
 				numberOfundos--;
 			} else if (soc.getOperation().equals("update")) {
-				list.remove(list.size() - 1);
+				list.remove(soc.getShape());
 				System.out.println("redoupdate");
 				list.add(soc.getShape2());
 				numberOfundos--;
